@@ -1,0 +1,7 @@
+# opcion1
+g++ main.cpp -o main
+./main.exe
+
+# opcion2
+g++ main.cpp KDTree.hpp Reader.hpp -o main
+./main.exe
