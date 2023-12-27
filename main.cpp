@@ -1,4 +1,5 @@
 #include "KDTree.hpp"
+#include "KMeans.hpp"
 #include "Reader.hpp"
 
 #include <iostream>
@@ -7,22 +8,21 @@
 using namespace std;
 using namespace kdt;
 using namespace rdr;
+using namespace std;
 
-int main(){
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main()
+{
+    KMeans kmeans;
     CSVReader reader("pca_result.csv");
     vector<Point3D> data = reader.readCSV();
-    KDTree<3> kdtree;
-    int c = 0;
-    for (auto &row : data){
-        kdtree.insert(row);
-        c++;
-    }
-    cout<<"INSERTED "<<c<<" NODES\n";
-    
-    // Call other functions here ...
-    
-    
-    
-    cout<<"FINISH\n";
+    vector<Point3D> all_centroides = kmeans.obtenerTresPuntosAleatorios(data);
+    kmeans.printVector(all_centroides);
+    vector<vector<Point3D>> Cluster = kmeans.KMeans_def(all_centroides, data);
+    // kmeans.printVV(Cluster);
+    cout << "FINISH\n";
     return 0;
 }

@@ -5,3 +5,15 @@ g++ main.cpp -o main
 # opcion2
 g++ main.cpp KDTree.hpp Reader.hpp -o main
 ./main.exe
+
+#Buen resultado
+INDICE  1: 5270
+INDICE  2: 2047
+INDICE  3: 3287
+Vector Elements: (-0.406881,-0.774106,0.851161)
+(0.134456,0.156678,-0.640763)
+(0.0435291,0.084042,-0.0866125)
+
+/////////////////// 1 :1081
+/////////////////// 2 :2102
+/////////////////// 3 :2461
